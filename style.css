@@ -24,6 +24,14 @@
     100% {background-color: var(--checked-button-color-1);}
 }
 
+@keyframes floatAnimation{
+    0% {transform: rotate(0deg) translateY(0px);}
+    25% {transform: rotate(5deg) translateY(-10px);}
+    50% {transform: rotate(0deg) translateY(0px);}
+    75% {transform: rotate(-5deg) translateY(10px);}
+    100% {transform: rotate(0deg) translateY(0px);}
+}
+
 /* STYLING BODY */
 body{
     background-color: var(--light-color-background);
@@ -97,7 +105,7 @@ section:first-of-type input[type="checkbox"]:checked  {
 
 /* STYLING VOOR DE SECTION RECHTS BOVEN */
 
-section:nth-of-type(2){
+section:nth-of-type(2):not(:has(> form)){
     border-radius: 1rem;
     height: auto;
     box-sizing: border-box;
@@ -116,7 +124,7 @@ section:nth-of-type(2) div:first-of-type{
 
 /* STYLING VOOR HET SCHERM */
 
-section:nth-of-type(2) div:first-of-type div:first-of-type{
+section:nth-of-type(2) div:first-of-type section:first-of-type{
     background-image: url('./assets/img/spaceBackground.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -129,14 +137,107 @@ section:nth-of-type(2) div:first-of-type div:first-of-type{
     height: 80%;
 }
 
+/* BASE STYLING VOOR DE KNOPPEN */
+
 section:nth-of-type(2) div:first-of-type form:first-of-type {
     display: flex;
     flex-direction: column;
 }
 
+/* BASE STYLING VOOR DE PLANEET AFBEELDINGEN EN NAMEN EN FEITJES */
+section:nth-of-type(2) div:first-of-type section:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* AFBEELDING VAN DE PLANEET + DE NAAM VAN DE PLANEET BASE STYLING */
+section:nth-of-type(2) div:first-of-type section:first-of-type div:first-of-type{
+    border:10px solid black;
+    display: grid;
+    justify-content: start;
+    align-items: last baseline;
+
+}
+/* INFORMATIE OVER DE PLANEET BASE STYLING */
+section:nth-of-type(2) div:first-of-type section:first-of-type div:nth-of-type(2){
+    border: 10px solid black;
+}
+
+/* MARSMANNETJE */
+section:nth-of-type(2) div:first-of-type img.marsMannetje{
+    position: absolute;
+    bottom: 1rem;
+    right: 3rem;
+    animation: floatAnimation 5s infinite linear;
+}
+
+/* VERANDER DE CONTENT IN HET SCHERM PLANEET EN NAAM */
+
+/* EARTH  */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type div:first-of-type img{
+    content: url(./assets/img/earth.svg);
+    height: 12rem;
+
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type span:first-of-type:after{
+    content:  'Earth';
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+/* MARS */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type div:first-of-type img{
+    content: url(./assets/img/mars.svg);
+    height: 12rem;
+
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type span:first-of-type:after{
+    content:  'Mars';
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+/* SATURN */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type div:first-of-type img{
+    content: url(./assets/img/saturn.svg);
+    height: 12rem;
+
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type span:first-of-type:after{
+    content:  'Saturn';
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+/* SATURN */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type div:first-of-type img{
+    content: url(./assets/img/sun.svg);
+    height: 12rem;
+
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type span:first-of-type:after{
+    content:  'Sun';
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+/* MOON */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type div:first-of-type img{
+    content: url(./assets/img/moon.svg);
+    height: 12rem;
+
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type span:first-of-type:after{
+    content:  'Moon';
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+
 /* STYLING VOOR DE KNOPPEN */
 
-section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]{
+section:nth-of-type(2) div:first-of-type section:nth-of-type(2) form:first-of-type input[type="radio"]{
     appearance: none;
     background-color: var(--button-for-screen-background-color);
     height: 5.5rem;
@@ -144,11 +245,11 @@ section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]{
     border: 0.5rem solid var(--border-color-purple);
 }
 
-section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:checked{
+section:nth-of-type(2) div:first-of-type section:nth-of-type(2) form:first-of-type input[type="radio"]:checked{
     background-color: var(--checked-button-color-active);
 }
 
-section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:before{
+section:nth-of-type(2) div:first-of-type section:nth-of-type(2) form:first-of-type input[type="radio"]:before{
     font-family: 'Keania One', sans-serif;
     color: var(--text-color);
 }
@@ -212,7 +313,6 @@ section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:
 section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(4):before{
     content: "Sun";
 }
-
 
 /* VIJFDE KNOP */
 
