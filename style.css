@@ -153,7 +153,6 @@ section:nth-of-type(2) div:first-of-type section:first-of-type{
 
 /* AFBEELDING VAN DE PLANEET + DE NAAM VAN DE PLANEET BASE STYLING */
 section:nth-of-type(2) div:first-of-type section:first-of-type div:first-of-type{
-    border:10px solid black;
     display: grid;
     justify-content: start;
     align-items: last baseline;
@@ -161,7 +160,11 @@ section:nth-of-type(2) div:first-of-type section:first-of-type div:first-of-type
 }
 /* INFORMATIE OVER DE PLANEET BASE STYLING */
 section:nth-of-type(2) div:first-of-type section:first-of-type div:nth-of-type(2){
-    border: 10px solid black;
+    color:var(--text-color);
+    text-align: right;
+    overflow: visible;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* MARSMANNETJE */
@@ -174,11 +177,11 @@ section:nth-of-type(2) div:first-of-type img.marsMannetje{
 
 /* VERANDER DE CONTENT IN HET SCHERM PLANEET EN NAAM */
 
+/* PLANETEN EN DE NAMEN ERVAN */
 /* EARTH  */
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type div:first-of-type img{
     content: url(./assets/img/earth.svg);
     height: 12rem;
-
 }
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type span:first-of-type:after{
     content:  'Earth';
@@ -190,7 +193,6 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type div:first-of-type img{
     content: url(./assets/img/mars.svg);
     height: 12rem;
-
 }
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type span:first-of-type:after{
     content:  'Mars';
@@ -202,7 +204,6 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type div:first-of-type img{
     content: url(./assets/img/saturn.svg);
     height: 12rem;
-
 }
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type span:first-of-type:after{
     content:  'Saturn';
@@ -214,7 +215,6 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type div:first-of-type img{
     content: url(./assets/img/sun.svg);
     height: 12rem;
-
 }
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type span:first-of-type:after{
     content:  'Sun';
@@ -226,12 +226,82 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type div:first-of-type img{
     content: url(./assets/img/moon.svg);
     height: 12rem;
-
 }
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type span:first-of-type:after{
     content:  'Moon';
     font-size: 4rem;
     color: var(--text-color);
+}
+
+/* INFORMATIE OVER DE PLANETEN */
+/* EARTH */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p:first-of-type:after{
+    content: "Earth's surface area is about 510 million square kilometers.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p:nth-of-type(2):after{
+    content: "Average surface temperature: 15°C (59°F).";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p:nth-of-type(3):after{
+    content: "A day on Mars is approximately 24.6 hours, similar to Earth's day length.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p:nth-of-type(4):after{
+    content: "Olympus Mons, on Mars, is the tallest volcano in the solar system, reaching about 21 kilometers high.";
+}
+
+/* MARS */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type p:first-of-type:after{
+    content: "Mars is the fourth planet from the Sun in our solar system.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type p:nth-of-type(2):after{
+    content: "Its surface appears red due to iron oxide, commonly known as rust.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type p:nth-of-type(3):after{
+    content: "Day length: Approximately 24 hours.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(2):checked) section:first-of-type p:nth-of-type(4):after{
+    content: "Distance from Earth to its moon: About 384,400 kilometers.";
+}
+
+/* SATURN */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type p:first-of-type:after{
+    content: "Saturn is the second-largest planet in our solar system, after Jupiter.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type p:nth-of-type(2):after{
+    content: "Its distinct rings are composed of ice and rock particles, extending far from the planet itself.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type p:nth-of-type(3):after{
+    content: "A day on Saturn lasts about 10.7 hours, while its orbit around the Sun takes approximately 29.5 Earth years.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(3):checked) section:first-of-type p:nth-of-type(4):after{
+    content: "Saturn has at least 82 moons, with Titan being the largest, having a dense atmosphere.";
+}
+
+/* SUN */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type p:first-of-type:after{
+    content: "The Sun is the star at the center of our solar system, providing heat and light to planets.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type p:nth-of-type(2):after{
+    content: "It is mainly composed of hydrogen and helium, with nuclear fusion reactions occurring in its core.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type p:nth-of-type(3):after{
+    content: "Light from the Sun takes about 8 minutes and 20 seconds to reach Earth, traveling at around 300,000 kilometers per second.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type p:nth-of-type(4):after{
+    content: "The Sun has an estimated lifespan of about 10 billion years, with roughly half of that already passed.";
+}
+
+/* MOON */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type p:first-of-type:after{
+    content: "The Moon is Earth's only natural satellite, affecting tides and climate.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type p:nth-of-type(2):after{
+    content: "It lacks an atmosphere, providing no protection against space radiation or meteorite impacts.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type p:nth-of-type(3):after{
+    content: "The Moon's origin is thought to be the result of a collision between Earth and another celestial body.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(5):checked) section:first-of-type p:nth-of-type(4):after{
+    content: "It displays phases such as new moon, first quarter, full moon, and last quarter due to its positions relative to the Earth and Sun.";
 }
 
 
