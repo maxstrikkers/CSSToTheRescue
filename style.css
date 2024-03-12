@@ -15,7 +15,7 @@
     --text-color: #ffffff;
 }
 
-/* CHECKBOX ANIMATION VOOR SECTION LINKS BOVEN */
+/* ANIMATIONS */
 
 @keyframes changeButtonColor {
     0% {background-color: var(--checked-button-color-1);}
@@ -30,6 +30,17 @@
     50% {transform: rotate(0deg) translateY(0px);}
     75% {transform: rotate(-5deg) translateY(10px);}
     100% {transform: rotate(0deg) translateY(0px);}
+}
+
+@keyframes planetFadeIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* STYLING BODY */
@@ -211,7 +222,7 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
     color: var(--text-color);
 }
 
-/* SATURN */
+/* SUN */
 section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:nth-of-type(4):checked) section:first-of-type div:first-of-type img{
     content: url(./assets/img/sun.svg);
     height: 12rem;
