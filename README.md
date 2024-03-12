@@ -17,3 +17,12 @@ Voor het tweede scherm wilde ik een soort tv maken met feitjes over bepaalde pla
 <img width="637" alt="Scherm­afbeelding 2024-03-12 om 12 59 48" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/1c7bf85a-db41-4aaf-9e6b-2c8b93648329">
 <br>
 Voor het derde scherm (links onder) wilde ik een kleiner schermpje maken waar tekst (in dit geval lines) naar beneden scrollt. De snelheid van deze scrollende tekst kan worden bepaald door de slider die rechtsonder staat. Ook wilde ik een radar maken die kan zien waar de muis zich op dit moment bevindt, maar ik denk dat dat lastig gaat worden met alleen CSS. Mocht dit niet mogelijk zijn, dan wil ik de radar laten draaien als de muis erboven zweeft.
+
+
+## Vierde scherm
+<img width="632" alt="Scherm­afbeelding 2024-03-12 om 13 03 51" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/4d533255-ce26-4481-b0e3-3a8cd38f4027">
+<br>
+Voor het vierde scherm (rechts onder) wilde ik een soort hartslagmeter maken die aan en uit gezet kan worden met de knop aan de rechterkant. Echter, ik zit nog een beetje te twijfelen, want ik overweeg ook om de knop te laten fungeren als een schakelaar tussen de lichte en donkere modus.
+
+# Week 2 CSS To The Rescue:
+
