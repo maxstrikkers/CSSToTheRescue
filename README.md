@@ -26,3 +26,138 @@ Voor het vierde scherm (rechts onder) wilde ik een soort hartslagmeter maken die
 
 # Week 2 CSS To The Rescue:
 
+## Alle schermen goed positioneren
+Ik ben begonnen met het maken van 4 sections in HTML. Elk van deze sections wordt later een scherm. Ik ben op mobiel begonnen, wilde daarom dat de schermen eerst onder elkaar kwamen en als het scherm groot genoeg werd, dan zouden er 2 naast elkaar en 2 onder elkaar komen.
+
+```
+/* STYLING BODY */
+body{
+    background-color: var(--light-color-background);
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr;
+    padding: 1rem;
+    grid-gap: 1rem;
+    font-family:'Keania One', sans-serif;
+}
+
+/* STYLING BODY MOBIEL */
+@media screen and (min-width: 1500px){
+    body{
+        grid-template: 1fr 1fr / 1fr 1fr;
+
+ }
+}
+```
+
+## Eerste scherm
+Ik ben voor het eerste scherm (links boven) gaan werken met een formulier waar allemaal checkboxes in zitten dat ziet er als volgt uit in html
+```
+<!-- SECTION LINKS BOVEN -->
+    <section>
+        <form>
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox"> 
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+        </form>
+    </section>
+```
+
+Dit moest natuurlijk gestyled worden en dat heb ik als volgt gedaan
+
+```
+section:first-of-type{
+    border-radius: 1rem;
+    background-color: var(--dark-color-background);
+    padding: 1.5rem;
+}
+
+section:first-of-type form:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    background-color: var(--border-color-purple);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+section:first-of-type input[type="checkbox"]{
+    appearance: none;
+    background-color: var(--light-color-background);
+    border: 10px solid rgba(0, 0, 0, 0.3);
+    height: 3.5rem;
+    width: 100%;
+}
+
+form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 1):checked ) input:nth-of-type(9n + 7){
+    animation: changeButtonColor 2s infinite;
+}
+
+form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 2):checked ) input:nth-of-type(8n + 13){
+    animation: changeButtonColor 2s infinite;
+}
+
+form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 3):checked ) input:nth-of-type(8n + 7){
+    animation: changeButtonColor 2s infinite;
+}
+
+form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 4):checked ) input:nth-of-type(8n + 11){
+    animation: changeButtonColor 2s infinite;
+}
+
+form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 5):checked ) input:nth-of-type(8n + 6){
+    animation: changeButtonColor 2s infinite;
+}
+
+section:first-of-type input[type="checkbox"]:checked  {
+    background-color: var(--checked-button-color-active) !important;
+}
+```
+
+Ik heb ook een animatie gemaakt die word toegepast en die loopt door een aantal kleuren heen van de knoppen.
+
+```
+/* CHECKBOX ANIMATION VOOR SECTION LINKS BOVEN */
+
+@keyframes changeButtonColor {
+    0% {background-color: var(--checked-button-color-1);}
+    50% {background-color: var(--checked-button-color-2);}
+    75% {background-color: var(--checked-button-color-3);}
+    100% {background-color: var(--checked-button-color-1);}
+}
+```
+
+
+
