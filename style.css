@@ -6,11 +6,13 @@
     --light-color-background: #D9D9D9;
     --dark-color-background: #B8B4A9;
     --border-color-purple: #1D2147;
+    --clickable-button-color: #D74E09;
     --checked-button-color-1: #E1163B;
     --checked-button-color-2: #E1B63B;
     --checked-button-color-3: #3B61E1;
     --checked-button-color-active: #2F9242;
     --button-for-screen-background-color: #555B8B;
+    --text-color: #ffffff;
 }
 
 /* CHECKBOX ANIMATION VOOR SECTION LINKS BOVEN */
@@ -64,6 +66,9 @@ section:first-of-type input[type="checkbox"]{
     border: 10px solid rgba(0, 0, 0, 0.3);
     height: 3.5rem;
     width: 100%;
+}
+form:first-of-type input[type="checkbox"]:not([disabled]) {
+    background-color: var(--clickable-button-color);
 }
 
 form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 1):checked ) input:nth-of-type(9n + 7){
@@ -129,6 +134,8 @@ section:nth-of-type(2) div:first-of-type form:first-of-type {
     flex-direction: column;
 }
 
+/* STYLING VOOR DE KNOPPEN */
+
 section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]{
     appearance: none;
     background-color: var(--button-for-screen-background-color);
@@ -141,21 +148,83 @@ section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:
     background-color: var(--checked-button-color-active);
 }
 
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:before{
+    font-family: 'Keania One', sans-serif;
+    color: var(--text-color);
+}
+
+/* EERSTE KNOP */
+
 section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:first-of-type{
     background-image: url(./assets/img/earth.svg);
     display: grid;
     place-items: end center;
-    background-size: 80%;
+    background-size: 70%;
     background-repeat: no-repeat;
-    background-position: center;
-}
-
-section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:before{
-
-    font-family: 'Keania One', sans-serif;
+    background-position: center 15%;
 }
 
 section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:first-of-type::before{
     content: "Earth";
+}
 
+/* TWEEDE KNOP */
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(2){
+    background-image: url(./assets/img/mars.svg);
+    display: grid;
+    place-items: end center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center 15%;
+}
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(2):before{
+    content: "Mars";
+}
+
+/* DERDE KNOP */
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(3){
+    background-image: url(./assets/img/saturn.svg);
+    display: grid;
+    place-items: end center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+}
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(3):before{
+    content: "Saturn";
+}
+
+/* VIERDE KNOP */
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(4){
+    background-image: url(./assets/img/sun.svg);
+    display: grid;
+    place-items: end center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center 15%;
+}
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(4):before{
+    content: "Sun";
+}
+
+
+/* VIJFDE KNOP */
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(5){
+    background-image: url(./assets/img/moon.svg);
+    display: grid;
+    place-items: end center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center 15%;
+}
+
+section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:nth-of-type(5):before{
+    content: "Moon";
 }
