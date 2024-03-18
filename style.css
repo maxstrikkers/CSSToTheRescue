@@ -739,4 +739,18 @@ section:nth-of-type(3) > div > section:nth-of-type(2){
     }
 }
 
+/* SCHERM RECHTS ONDER */
+section:nth-of-type(4){
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+section:nth-of-type(4) span:nth-of-type(odd){
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+    color: black;
+    transform-origin: left;
+    transform: rotate(-22.5deg);
+}
 
