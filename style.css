@@ -614,15 +614,23 @@ section:nth-of-type(2) div:first-of-type form:first-of-type input[type="radio"]:
 
 /* STYLING SECTION RECTHS ONDER */
 section:nth-of-type(3){
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
+    justify-content: center;
     border-radius: 1rem;
     background-color: var(--dark-color-background);
     padding: 1.5rem;
     border: 30px solid var(--border-color-purple);
+    display: grid;
+    gap: 1rem;
 }
+
+/* STYLING VOOR DE RECHTER KANT (RADAR EN SLIDER) DESKTOP */
+@media screen and (min-width: 40em){
+    body > section:nth-of-type(3){
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 
 /* STYLING VOOR HET SCROLL SCHERM */
 section:nth-of-type(3) > section:first-of-type{
@@ -659,18 +667,15 @@ section:nth-of-type(3) > section:first-of-type span:nth-of-type(4n){
     width:80%;
 }
 
-/* STYLING VOOR DE RECHTER KANT (RADAR EN SLIDER) */
-body > section:nth-of-type(3){
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
+/* STYLING VOOR DE CONTAINER RADAR EN SLIDER */
 section:nth-of-type(3) > div{
-    border: 10px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* STYLING VOOR DE RADAR */
-section:nth-of-type(3) > div > section{
+section:nth-of-type(3) > div > section:first-of-type{    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -678,17 +683,12 @@ section:nth-of-type(3) > div > section{
     border-image-slice: 25;
     border-style: solid;
     border-width: 25px;
+    height: 90%;
     background-color: var(--dark-color-background);
-}
 
-section:nth-of-type(3) > div > section{
     img{
-        width: 90%;
         animation: radarRotate 1s linear infinite;
         animation-play-state: paused;
-    }
-    input[type{
-        display:;
     }
 }
 
@@ -698,6 +698,45 @@ section:nth-of-type(3) > div > section:hover{
     }
 }
 
+/* STYLING VOOR DE SLIDER */
+section:nth-of-type(3) > div > section:nth-of-type(2){
+    border-image-source: url("./assets/img/borderBackgroundLight.svg");
+    border-image-slice: 25;
+    border-style: solid;
+    border-width: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0 0 0;
 
+    input[type=range]{
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        border: 0.4rem solid var(--border-color-purple);
+        background: transparent;
+        border-radius: 1rem;
+    }
+    /* SLIDER BOLLETJE VOOR WEBKIT */
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        height: 100%; 
+        width: 15%;
+        background: var(--clickable-button-color);
+    }
+    /* SLIDER BOLLETJE VOOR FIREFOX */
+    input[type=range]::-moz-range-thumb {
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        height: 100%; 
+        width: 15%;
+        background: var(--clickable-button-color);
+        border-radius: 0.5rem;
+    }
+}
 
 
