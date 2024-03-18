@@ -185,7 +185,7 @@
 }
 
 /* SCROLL ANIMATIE */
-@keyframes infiniteScroll {
+@keyframes infiniteScrollVertical {
     0% {
         transform: translateY(0%);
     }
@@ -194,6 +194,18 @@
     }
     100%{
         transform: translateY(0%);
+    }
+}
+
+@keyframes infiniteScrollHorizontal {
+    0% {
+        transform: translateX(0%);
+    }
+    99.9% {
+        transform: translateX(20.3%);
+    }
+    100%{
+        transform: translateX(0%);
     }
 }
 
@@ -646,7 +658,7 @@ section:nth-of-type(3) > section:first-of-type{
 }
 
 section:nth-of-type(3) > section:first-of-type > span{
-    animation: infiniteScroll var(--animation-duration) linear infinite;   
+    animation: infiniteScrollVertical var(--animation-duration) linear infinite;   
     border-radius: 1rem;
     background-color: var(--dark-color-background);
     border: 1px solid black;
@@ -726,6 +738,7 @@ section:nth-of-type(3) > div > section:nth-of-type(2){
         height: 100%; 
         width: 15%;
         background: var(--clickable-button-color);
+        -webkit-border-radius: 0.5rem;
     }
     /* SLIDER BOLLETJE VOOR FIREFOX */
     input[type=range]::-moz-range-thumb {
@@ -739,18 +752,64 @@ section:nth-of-type(3) > div > section:nth-of-type(2){
     }
 }
 
-/* SCHERM RECHTS ONDER */
-section:nth-of-type(4){
+/* SCHERM RECHTS ONDER MOBIEL*/
+section:nth-of-type(4) {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+}  
+
+
+/* SCHERM RECHTS ONDER DESKTOP*/
+@media screen and (min-width: 90em) {
+    section:nth-of-type(4) {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 1rem;
+    }  
 }
 
-section:nth-of-type(4) span:nth-of-type(odd){
-    display: inline-block;
-    width: 10em;
-    height: 10em;
-    color: black;
-    transform-origin: left;
-    transform: rotate(-22.5deg);
+
+/* SECTION LINKS VAN HET SCHERM RECHTS ONDER (PULSE) */
+section:nth-of-type(4) section:first-of-type{
+    img{
+        animation: infiniteScrollHorizontal 5s linear infinite;
+        height: 40%;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image-source: url("./assets/img/borderBackgroundLight.svg");
+    border-image-slice: 25;
+    border-style: solid;
+    border-width: 25px;
+    overflow: hidden;
+    background-color: var(--border-color-purple);
 }
 
+/* SECTION RECHTS VAN HET SCHERM RECHTS ONDER (BUTTONS) */
+section:nth-of-type(4) div:first-of-type {
+    display: flex;
+    align-self: space-around;
+
+    form {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 600px) {
+            display: flex; /* Verander de layout naar flex op mobiele apparaten */
+        }
+    }
+
+    input {
+        appearance: none;
+        height: 8rem;
+        width: 4rem;
+        background-color: green;
+
+        @media (max-width: 600px) {
+            width: 8rem; /* Wissel de breedte en hoogte om op mobiele apparaten */
+            height: 4rem;
+        }
+    }
+}
