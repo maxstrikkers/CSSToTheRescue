@@ -304,6 +304,174 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 
 ## Derde scherm
 <img width="761" alt="Scherm­afbeelding 2024-03-20 om 20 52 33" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/09d52bee-0af8-45b5-ac14-502632d984a4">
-Voor het derde scherm wilde ik een 
+<br>
+Het rechter scherm bevat een kleiner scherm met daarin scrollende lijnen, rechts heb ik een radar gemaakt die ronddraait als je er met je muis over hovert en daaronder heb ik een slider gemaakt die de scroll snelheid bepaald van het linker schermpje. dat zier er als volgt uit in html
+```
+ <section>
+        <section> <!-- EERSTE SCHERM (SCROLL) -->
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </section>
+        <div> <!-- GROEP VOOR RECHTER SCHERMEN (RADAR EN SLIDER) -->
+            <section> <!--SECTION VOOR DE RADAR-->
+                <img src="./assets/img/radar.svg"">
+            </section>
+            <section> <!--SECTION VOOR DE SLIDER-->
+                <input type="range" min="1" max="10" step="1" value=".9" name="scrollSpeec" orient="horizontal">	
+            </section>
+        </div>
+    </section>
+```
+Ik heb eerst de layout van het rechter scherm gestyled voor desktop en mobiel
 
+```
+section:nth-of-type(3){
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: var(--dark-color-background);
+    padding: 1.5rem;
+    border: 30px solid var(--border-color-purple);
+    display: grid;
+    gap: 1rem;
+}
+
+/* STYLING VOOR DE RECHTER KANT (RADAR EN SLIDER) DESKTOP */
+@media screen and (min-width: 40em){
+    body > section:nth-of-type(3){
+        grid-template-columns: 1fr 1fr;
+    }
+}
+```
+Daarna ben ik de scrollable content gaan stylen en het zijn eigelijk een hoop span onderdelen die precies goed getimed op nieuw beginnen te animeren waardoor het lijkt alsof er oneindig word gescrolled. Ik geef ook aan dat elke 2e span 30% breed moet zijn elke 3e 60% en elke 4e 80% om zo niet voor elke span een nieuwe CSS regel te hoeven schrijven.
+
+```
+
+@keyframes infiniteScrollVertical {
+    0% {
+        transform: translateY(0%);
+    }
+    99.9% {
+        transform: translateY(-2400%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+section:nth-of-type(3) > section:first-of-type{
+    border-image-source: url("./assets/img/borderBackgroundLight.svg");
+    border-image-slice: 25;
+    border-style: solid;
+    border-width: 25px;
+    background-color: var(--border-color-purple);
+    overflow: hidden;
+    display: grid;
+    align-content: center;
+    height: 100%;
+}
+
+section:nth-of-type(3) > section:first-of-type > span{
+    animation: infiniteScrollVertical var(--animation-duration) linear infinite;   
+    border-radius: 1rem;
+    background-color: var(--dark-color-background);
+    border: 1px solid black;
+    width: 40%; 
+    height: 1rem;
+    margin:0.5rem;
+}
+
+section:nth-of-type(3) > section:first-of-type span:nth-of-type(2n){
+    width: 30%;
+}
+
+section:nth-of-type(3) > section:first-of-type span:nth-of-type(3n){
+    width:60%;
+}
+
+section:nth-of-type(3) > section:first-of-type span:nth-of-type(4n){
+    width:80%;
+}
+
+```
+
+Daarna ben ik het scherm van de radar gaan stylen en ook begonnen met geneste CSS te gebruiken. Dit maakt het een stuk overzichtelijker en zorgt er voor dat ik niet meer van die hele lange specifieke CSS regels hoef te schrijven. Ik maak gebruik van de ```animation-play-state``` om er zo voor te zorgen dat de radar niet elke keer opnieuw gaat beginnen als de muis er van af gehaald word maar dat hij gewoon pauzeerd
+
+```
+@keyframes radarRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+section:nth-of-type(3) > div > section:first-of-type{    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image-source: url("./assets/img/borderBackgroundLight.svg");
+    border-image-slice: 25;
+    border-style: solid;
+    border-width: 25px;
+    height: 90%;
+    background-color: var(--dark-color-background);
+
+    img{
+        animation: radarRotate 1s linear infinite;
+        animation-play-state: paused;
+    }
+}
+
+section:nth-of-type(3) > div > section:hover{
+    img{
+        animation-play-state: running;
+    }
+}
+```
 
