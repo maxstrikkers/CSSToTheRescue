@@ -488,5 +488,68 @@ slider.oninput = function() {
     document.documentElement.style.setProperty('--animation-duration', `${slider.value}s`);
 };
 
-`
+```
+Ik heb wel gemerkt dat ondanks dart ik hier ```-webkit-slider-thumb``` zeg de style van de slider niet werkt in Safari
+
+```
+/* STYLING VOOR DE SLIDER */
+section:nth-of-type(3) > div > section:nth-of-type(2){
+    border-image-source: url("./assets/img/borderBackgroundLight.svg");
+    border-image-slice: 25;
+    border-style: solid;
+    border-width: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0 0 0;
+
+    input[type=range]{
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        border: 0.4rem solid var(--border-color-purple);
+        background: transparent;
+        border-radius: 1rem;
+    }
+    /* SLIDER BOLLETJE VOOR WEBKIT */
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        height: 100%; 
+        width: 15%;
+        background: var(--clickable-button-color);
+        -webkit-border-radius: 0.5rem;
+    }
+    /* SLIDER BOLLETJE VOOR FIREFOX */
+    input[type=range]::-moz-range-thumb {
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        height: 100%; 
+        width: 15%;
+        background: var(--clickable-button-color);
+        border-radius: 0.5rem;
+    }
+}
+```
+
+### Scherm rechts onder
+<img width="748" alt="Scherm­afbeelding 2024-03-20 om 21 22 02" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/7c0c5b8e-5f22-4ce8-bb65-f6b885daa11e">
+```
+    <section>
+        <section> <!--SCHERM MET PULSE-->
+            <div>
+                <img preserveAspectRatio="none" src="./assets/img/zigzag.svg" alt="">
+            </div>
+        </section>
+        <div> <!--GROEP VOOR DE KNOPPEN-->
+            <form>
+                <input type="radio" name="controlZigzag" checked>
+                <input type="radio" name="controlZigzag">
+            </form>
+        </div>
+```
+
 
