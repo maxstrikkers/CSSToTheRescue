@@ -198,9 +198,9 @@ Om ervoor te zorgen dat het tweede scherm op de manier waarop ik het wil wordt g
         </div>
     </section>
 ```
-Ik heb met de CSS ervoor gezorgd dat alle knoppen de juiste planeet laten zien en dat de juiste informatie over de planeet wordt ingeladen wanneer er op die knop wordt gedrukt. Dat ziet er als volgt uit:
+Met behulp van CSS heb ik ervoor gezorgd dat alle knoppen de juiste planeet laten zien en dat de relevante informatie over de planeet wordt ingeladen wanneer er op die knop wordt gedrukt. Dit ziet er als volgt uit:
 
-Ik zeg eerst dat er iets moet gebeuren met de tweede sectie waar geen formulier een direct kind is van die tweede sectie. Dat is in dit geval de kant waar de informatie over de planeet moet komen, zoals de naam, de planeet zelf en wat feitjes over de planeet. Daarna geef ik het linker scherm (waar de planeet, naam van de planeet en de feitjes op staan) een border image en een background image.
+Ik heb eerst aangegeven dat de stijl moet worden toegepast op de tweede sectie waar geen formulier rechtstreeks binnen die sectie aanwezig is. Dit betekent dat de CSS specifiek gericht is op de situatie waarin er meerdere secties zijn en ik specifiek de tweede sectie wil targeten, maar alleen als er binnen die sectie geen formulier aanwezig is. Deze sectie is bedoeld voor het weergeven van informatie over de planeet, zoals de naam, de planeet zelf en enkele feiten. Vervolgens heb ik de stijl toegepast op het linker scherm, waarop de planeet, de naam van de planeet en de feiten worden weergegeven. Hierbij heb ik een border image en een background image toegevoegd voor visuele verbeteringen.
 ```
 section:nth-of-type(2):not(:has(> form)){
     border-radius: 1rem;
@@ -236,6 +236,9 @@ section:nth-of-type(2) div:first-of-type section:first-of-type{
     container-type: inline-size;
 }
 ```
+
+Nu moet de content van de planeten en de content die in de knoppen komt nog correct worden weergegeven dat doe ik met de volgende CSS
+
 
 
 
