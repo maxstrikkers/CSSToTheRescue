@@ -475,3 +475,18 @@ section:nth-of-type(3) > div > section:hover{
 }
 ```
 
+De slider vond ik misschien wel het leukst om te maken. Ik heb een simpele slider gemaakt in HTML en ik zorg er vervolgens met JavaScript voor dat de waarde die de slider heeft de hoeveelheid seconde word dat de animatie gaat lopen. Dit heb ik gedaan met een custom property en het ziet er als volgt uit
+```
+:root{
+    --animation-duration: 1s;
+}
+```
+```
+const slider = document.querySelector('[type="range"]');
+
+slider.oninput = function() {
+    document.documentElement.style.setProperty('--animation-duration', `${slider.value}s`);
+};
+
+`
+
