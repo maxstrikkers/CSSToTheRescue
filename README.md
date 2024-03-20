@@ -702,3 +702,17 @@ h1 {
 
 ```
 
+## Resultaat
+
+Ik ben uiteindelijk heel blij met het resultaat. Ik heb bijna precies neer kunnen zetten wat ik in mijn schets en in mijn hoofd had. Dit is een screenshot van de webpagina op dekstop formaat en op mobiel formaat.
+
+# Desktop
+![Screenshot 2024-03-20 at 21-47-22 Max Strikkers](https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/b49a8b80-4b53-429d-ab96-66df900523b5)
+
+#Mobiel
+<img width="699" alt="Scherm­afbeelding 2024-03-20 om 21 48 30" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/f43cdeb8-9267-4415-9fdb-93819a1cc8f3">
+<img width="699" alt="Scherm­afbeelding 2024-03-20 om 21 48 39" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/d67473d2-b983-4171-954f-bba1df327105">
+<img width="699" alt="Scherm­afbeelding 2024-03-20 om 21 48 44" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/df576575-20e8-47a6-9ab0-7902b659dd03">
+
+
+
