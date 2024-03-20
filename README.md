@@ -237,8 +237,70 @@ section:nth-of-type(2) div:first-of-type section:first-of-type{
 }
 ```
 
-Nu moet de content van de planeten en de content die in de knoppen komt nog correct worden weergegeven dat doe ik met de volgende CSS
+Nu moet de content van de planeten en de content die in de knoppen komt nog correct worden weergegeven. Dat doe ik met de volgende CSS. Ik wil, als er nog tijd voor is, kijken of deze CSS wat netter en minder complex geschreven kan worden. Voor elke planeet heb ik een aparte animatie gemaakt, en die roep ik per planeet op. De code is voor elke planeet hetzelfde, maar dan met de juiste planeet; in dit geval dus de aarde
+```
 
+@keyframes planetFadeInEarth {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes textUnmaskEarth{
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* EARTH  */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type div:first-of-type img{
+    animation: planetFadeInEarth 0.3s ease-in-out;
+    content: url(./assets/img/earth.svg);
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type span:first-of-type:after{
+    content:  'Earth';
+    color: var(--text-color);
+    animation: textUnmaskEarth 0.3s linear;
+}
+
+
+```
+Hier worden de feitjes per planeet ingeladen met een animatie 
+```
+@keyframes factsUnmaskEarth{
+    0% {
+        clip-path: inset(0 0 0 100%);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+/* EARTH */
+/* ANIMATION */
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p{
+    animation: factsUnmaskEarth 0.3s linear;
+}
+
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p:first-of-type:after{
+    content: "Earth's surface area is about 510 million square kilometers.";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p:nth-of-type(2):after{
+    content: "Average surface temperature: 15°C (59°F).";
+}
+section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radio"]:first-of-type:checked) section:first-of-type p:nth-of-type(3):after{
+    content: "Day length: Approximately 24 hours.";
+}
+```
 
 
 
