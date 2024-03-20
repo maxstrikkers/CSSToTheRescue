@@ -308,6 +308,7 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 <img width="761" alt="Scherm­afbeelding 2024-03-20 om 20 52 33" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/09d52bee-0af8-45b5-ac14-502632d984a4">
 <br>
 Het rechter scherm bevat een kleiner scherm met daarin scrollende lijnen, rechts heb ik een radar gemaakt die ronddraait als je er met je muis over hovert en daaronder heb ik een slider gemaakt die de scroll snelheid bepaald van het linker schermpje. dat zier er als volgt uit in html
+
 ```
  <section>
         <section> <!-- EERSTE SCHERM (SCROLL) -->
@@ -366,7 +367,7 @@ Het rechter scherm bevat een kleiner scherm met daarin scrollende lijnen, rechts
                 <input type="range" min="1" max="10" step="1" value=".9" name="scrollSpeec" orient="horizontal">	
             </section>
         </div>
-    </section>
+    </section>  
 ```
 Ik heb eerst de layout van het rechter scherm gestyled voor desktop en mobiel
 
