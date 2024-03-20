@@ -302,6 +302,48 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 }
 ```
 
+Ik heb uiteindelijk ook gebruik gemaakt van container queries om zo op basis van de groote van het scherm (de container) te kunnen bepalen waneeer er bijvoorbeeld onderdelen een andere layout moeten krijgen
+
+```/* CONTAINER QUERIES */
+
+/* BASE STYLING VOOR STRUCTUUR SCHERM RECHTS BOVEN (DE PLANEET AFBEELDINGEN EN NAMEN EN FEITJES) */
+@container (min-width: 40em){
+    /* BASE STYLING VOOR STRUCTUUR SCHERM RECHTS BOVEN (DE PLANEET AFBEELDINGEN EN NAMEN EN FEITJES) */
+    section:nth-of-type(2) div:first-of-type section:first-of-type{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+@container (min-width: 20em){
+    /* LAYOUT VAN DE CONTENT IN HET SCHERM (PLANEET EN NAAM) */
+    section:nth-of-type(2) div:first-of-type section:first-of-type div:first-of-type img{
+        width: 15rem;
+    }
+    section:nth-of-type(2) div:first-of-type section:first-of-type span:first-of-type:after{
+        font-size: 6rem;
+    }
+}
+
+@container(max-width:40em){
+    /* BASE STYLING VOOR STRUCTUUR SCHERM RECHTS BOVEN (DE PLANEET AFBEELDINGEN EN NAMEN EN FEITJES) */
+    section:nth-of-type(2) div:first-of-type section:first-of-type{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@container(max-width: 20em){
+    /* LAYOUT VAN DE CONTENT IN HET SCHERM (PLANEET EN NAAM) */
+    section:nth-of-type(2) div:first-of-type section:first-of-type div:first-of-type img{
+        width: 10rem;
+    }
+    section:nth-of-type(2) div:first-of-type section:first-of-type span:first-of-type:after{
+        font-size: 4rem;
+    }
+}
+
+```
+
 ## Week 4
 
 ## Derde scherm
@@ -607,5 +649,56 @@ section:nth-of-type(4):has(input:nth-of-type(2):checked) section:first-of-type i
 }
 ```
 
+## Titel
+Als laatst heb ik een titel toegevoegd aan de pagina. Ik wilde dat wanneer de pagina geladen werd de titel volledig in beeld kwam en even in beeld bleef waarna hij langzaam vaag werd.
 
+Ik heb een header toegevoegd met daarin een h1, de titel.
+
+```
+<header>
+    <h1>The Creative Cosmos: Pixels, Planets & Pulses</h1>
+</header>
+```
+Ik heb hem een position absolute gegeven om hem boven alle andere content te plaatsen, de ```<header>```
+
+Ik wilde dat de header langzaam naar onzichtbaar fade en dat de titel zelf ook nog een beetje in en uit zoomt en dat heb ik als volgt gedaan
+
+```
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    animation: fadeOut 6s ease forwards;
+    z-index: 100;
+}
+
+h1 {
+    animation: pulse 6s ease forwards;
+}
+
+```
 
