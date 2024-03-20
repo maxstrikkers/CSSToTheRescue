@@ -302,6 +302,8 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 }
 ```
 
+## Week 4
+
 ## Derde scherm
 <img width="761" alt="Scherm­afbeelding 2024-03-20 om 20 52 33" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/09d52bee-0af8-45b5-ac14-502632d984a4">
 <br>
@@ -537,6 +539,7 @@ section:nth-of-type(3) > div > section:nth-of-type(2){
 
 ### Scherm rechts onder
 <img width="748" alt="Scherm­afbeelding 2024-03-20 om 21 22 02" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/7c0c5b8e-5f22-4ce8-bb65-f6b885daa11e">
+
 ```
 
     <section>
@@ -552,5 +555,56 @@ section:nth-of-type(3) > div > section:nth-of-type(2){
             </form>
         </div>
 ```
+
+Ik heb hier een svg in geplaats (zigzag) met daar onder een form waarin bepaald word in welke state de zigzag zich bevind. Helemaal ingeklapt of helemaal uitgeklapt.
+
+Dit ziet er als volg uit in CSS
+
+Ik geef de div die om de svg heen zit een animatie die er voor zorgt dat hij de ilusie krijgt dat hij oneindig naar rechts scrollt en daarna gebruik ik has om te kijken wanneer de svg zelf moet worden ingeklapt. Ik heb hiervoor 2 animaties gemaakt (collapse en unCollapse)
+```
+
+@keyframes collapse {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes unCollapse {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+section:nth-of-type(4) section:first-of-type{
+    div{
+        animation: infiniteScrollHorizontal 5s linear infinite;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image-source: url("./assets/img/borderBackgroundLight.svg");
+    border-image-slice: 25;
+    border-style: solid;
+    border-width: 25px;
+    overflow: hidden;
+    background-color: var(--border-color-purple);
+}
+
+
+section:nth-of-type(4):has(input:first-of-type:checked) section:first-of-type img {
+    animation: unCollapse 1s linear forwards;
+}
+
+section:nth-of-type(4):has(input:nth-of-type(2):checked) section:first-of-type img {
+    animation: collapse 1s linear forwards;
+}
+```
+
 
 
