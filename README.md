@@ -198,6 +198,44 @@ Om ervoor te zorgen dat het tweede scherm op de manier waarop ik het wil wordt g
         </div>
     </section>
 ```
+Ik heb met de CSS ervoor gezorgd dat alle knoppen de juiste planeet laten zien en dat de juiste informatie over de planeet wordt ingeladen wanneer er op die knop wordt gedrukt. Dat ziet er als volgt uit:
+
+Ik zeg eerst dat er iets moet gebeuren met de tweede sectie waar geen formulier een direct kind is van die tweede sectie. Dat is in dit geval de kant waar de informatie over de planeet moet komen, zoals de naam, de planeet zelf en wat feitjes over de planeet. Daarna geef ik het linker scherm (waar de planeet, naam van de planeet en de feitjes op staan) een border image en een background image.
+```
+section:nth-of-type(2):not(:has(> form)){
+    border-radius: 1rem;
+    height: auto;
+    border: 30px solid var(--border-color-purple);
+    background-color: var(--dark-color-background);
+}
+
+section:nth-of-type(2) div:first-of-type{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+section:nth-of-type(2) div:first-of-type{
+    container-type: inline-size;
+}
+
+section:nth-of-type(2) div:first-of-type section:first-of-type{
+    background-image: url('./assets/img/spaceBackground.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border-image-source: url("./assets/img/borderBackgroundDark.svg");
+    border-image-slice: 25;
+    border-style: solid;
+    border-width: 25px;
+    min-width: 75%;
+    min-height: 80%;
+    container-type: inline-size;
+}
+```
 
 
 
