@@ -50,41 +50,41 @@ body{
 ```
 
 ## Eerste scherm
-Ik ben voor het eerste scherm (links boven) gaan werken met een formulier waar allemaal checkboxes in zitten dat ziet er als volgt uit in html
+Ik ben voor het eerste scherm (links boven) gaan werken met een formulier waar allemaal checkboxes in zitten dat ziet er als volgt uit in HTML. Er zijn een aantal checkboxes disabled omdat ik alleen wil dat de onderste rij klikbaar is.
 ```
 <!-- SECTION LINKS BOVEN -->
     <section>
         <form>
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox"> 
-            <input type="checkbox">
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
+            <input type="checkbox" disabled>
             <input type="checkbox">
             <input type="checkbox">
             <input type="checkbox">
@@ -97,12 +97,14 @@ Ik ben voor het eerste scherm (links boven) gaan werken met een formulier waar a
 Dit moest natuurlijk gestyled worden en dat heb ik als volgt gedaan
 
 ```
+/* DIT IS DE STIJLING VOOR DE EERSTE SECTIE VAN DE PAGINA */
 section:first-of-type{
     border-radius: 1rem;
     background-color: var(--dark-color-background);
     padding: 1.5rem;
 }
 
+/* STIJLING VOOR HET EERSTE FORMULIER BINNEN DE EERSTE SECTIE */
 section:first-of-type form:first-of-type{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -113,6 +115,7 @@ section:first-of-type form:first-of-type{
     padding: 1.5rem;
 }
 
+/* AANPASSINGEN VOOR DE CHECKBOX-STIJL BINNEN DE EERSTE SECTIE */
 section:first-of-type input[type="checkbox"]{
     appearance: none;
     background-color: var(--light-color-background);
@@ -121,6 +124,7 @@ section:first-of-type input[type="checkbox"]{
     width: 100%;
 }
 
+/* ANIMATIE VOOR KNOPEKLEUR VERANDERING BIJ GESELECTEERDE CHECKBOX */
 form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 1):checked ) input:nth-of-type(9n + 7){
     animation: changeButtonColor 2s infinite;
 }
@@ -141,9 +145,11 @@ form:first-of-type:has( input[type="checkbox"]:nth-of-type(5n + 5):checked ) inp
     animation: changeButtonColor 2s infinite;
 }
 
+/* AANPASSINGEN VOOR GESELECTEERDE CHECKBOX-STIJL BINNEN DE EERSTE SECTIE */
 section:first-of-type input[type="checkbox"]:checked  {
     background-color: var(--checked-button-color-active) !important;
 }
+
 ```
 
 Ik heb ook een animatie gemaakt die word toegepast en die loopt door een aantal kleuren heen van de knoppen.
