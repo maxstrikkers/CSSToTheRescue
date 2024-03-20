@@ -160,5 +160,39 @@ Ik heb ook een animatie gemaakt die word toegepast en die loopt door een aantal 
 ```
 
 # Week 3 CSS To the Rescue:
-## Derde scherm
+## Tweede scherm
+<img width="505" alt="Scherm­afbeelding 2024-03-20 om 13 58 28" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/d512a37f-15a9-41e8-86c7-2d581779124e">
+
+Om ervoor te zorgen dat het tweede scherm op de manier waarop ik het wil wordt getoond, heb ik het als volgt ingedeeld in HTML. Dit zorgt ervoor dat ik links een groepje heb met de informatie over de planeet, de planeet zelf en de naam van de planeet. Deze zijn nu nog allemaal leeg maar worden later toegevoegd met CSS.
+```
+<section>
+        <div> <!-- GROEP VOOR PLANEET CONTENT EN KNOPPEN-->
+            <section> <!-- CONTENT MET PLANETEN-->
+                <div>
+                    <img src=""> <!-- HIER KOMT DE IMG VAN DE PLANEET-->
+                    <span></span> <!--HIER KOMT DE NAAM VAN DE PLANEET-->
+                </div> <!-- DIV VOOR PLANEET EN NAAM VAN PLANEET -->
+                <div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div> <!-- DIV VOOR INFORMATIE OVER DE PLANEET -->
+                <img src="./assets/img/marsMannetje.svg" alt="Mars Mannetje"> <!-- IMG VAN MARS MANNETJE -->
+            </section>
+            <section> <!-- KNOPPEN VOOR DE PLANETEN-->
+                <form>
+                    <input type="radio" name="planet" value="earth">
+                    <input type="radio" name="planet" value="mars">
+                    <input type="radio" name="planet" value="saturn">
+                    <input type="radio" name="planet" value="sun">
+                    <input type="radio" name="planet" value="moon">
+                </form>
+            </section>
+        </div>
+    </section>
+```
+
+
+
 
