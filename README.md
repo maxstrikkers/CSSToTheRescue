@@ -538,6 +538,7 @@ section:nth-of-type(3) > div > section:nth-of-type(2){
 ### Scherm rechts onder
 <img width="748" alt="Scherm­afbeelding 2024-03-20 om 21 22 02" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/7c0c5b8e-5f22-4ce8-bb65-f6b885daa11e">
 ```
+
     <section>
         <section> <!--SCHERM MET PULSE-->
             <div>
