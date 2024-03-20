@@ -273,7 +273,7 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 
 
 ```
-Hier worden de feitjes per planeet ingeladen met een animatie 
+Hier worden de feitjes per planeet ingeladen met een animatie.
 ```
 @keyframes factsUnmaskEarth{
     0% {
@@ -302,6 +302,8 @@ section:nth-of-type(2) div:first-of-type:has(form:first-of-type input[type="radi
 }
 ```
 
-
+## Derde scherm
+<img width="761" alt="Scherm­afbeelding 2024-03-20 om 20 52 33" src="https://github.com/maxstrikkers/CSSToTheRescue/assets/91324635/09d52bee-0af8-45b5-ac14-502632d984a4">
+Voor het derde scherm wilde ik een 
 
 
