@@ -309,9 +309,8 @@ body{
  }
 }
 
-
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -807,7 +806,7 @@ section:nth-of-type(3) > div > section:nth-of-type(2){
     }
 }
 
-/* SCHERM RECHTS ONDER MOBIEL*/
+/* SCHERM RECHTS ONDER*/
 section:nth-of-type(4) {
     display: grid;
     grid-template-columns: 3fr 1fr;
