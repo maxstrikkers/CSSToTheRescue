@@ -159,5 +159,6 @@ Ik heb ook een animatie gemaakt die word toegepast en die loopt door een aantal 
 }
 ```
 
-#Week 3 CSS To the Resque
+# Week 3 CSS To the Rescue:
+## Derde scherm
 
