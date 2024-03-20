@@ -224,16 +224,32 @@
         transform: scaleY(1);
     }
     100% {
-        transform: scaleY(0.1);
+        transform: scaleY(0);
     }
 }
 
 @keyframes unCollapse {
     0% {
-        transform: scaleY(0.1);
+        transform: scaleY(0);
     }
     100% {
         transform: scaleY(1);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
     }
 }
 
@@ -291,6 +307,27 @@ body{
     body{
         grid-template: 1fr 1fr / 1fr 1fr;
  }
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    animation: fadeOut 6s ease forwards;
+    z-index: 100;
+}
+
+h1 {
+    animation: pulse 6s ease forwards;
 }
 
 body > section{
@@ -358,7 +395,7 @@ section:first-of-type input[type="checkbox"]:checked  {
 }
 
 /* STYLING VOOR DE SECTION RECHTS BOVEN */
-body > section:nth-of-type(2):not(:has(> form)){
+section:nth-of-type(2):not(:has(> form)){
     border-radius: 1rem;
     height: auto;
     border: 30px solid var(--border-color-purple);
